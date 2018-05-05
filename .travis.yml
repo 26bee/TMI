@@ -1,0 +1,6 @@
+"os": "linux",
+"dist": "trusty",
+"group": "stable",
+"script": "make && make test",
+"compiler": "gcc",
+"language": "c"
