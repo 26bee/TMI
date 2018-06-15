@@ -7,4 +7,4 @@ language: c
 before_install:
   - sudo apt-get update
   - sudo apt-get install -y libncurses5-dev
-  - sudo apt-get install -y ncurses-dev
+  - sudo apt-get install -y libncursesw5-dev
