@@ -6,4 +6,4 @@ compiler: gcc
 language: c
 before_install:
   - sudo apt-get update
-  - sudo apt-get install libncurses-dev
+  - sudo apt-get install -y libncurses-dev
