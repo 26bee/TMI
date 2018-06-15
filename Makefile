@@ -1,6 +1,6 @@
 TMI: mkdir_bin tmi.o double_linked_list.o \
 	instruction_list.o parser.o mt.o tmi.o main.o
-	gcc -std=c99 -Wall -Werror -lncurses -lpthread \
+	gcc -std=c99 -Wall -Werror -lncurses -lcurses -lpthread \
 	build/tmi.o build/double_linked_list.o \
 	build/instruction_list.o build/parser.o build/mt.o build/main.o -o bin/TMI
 
