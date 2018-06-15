@@ -40,7 +40,7 @@ tmi.o: mkdir_build src/tmi.c
 	gcc -std=c99 -Wall -Werror -c src/tmi.c -o build/tmi.o
 
 main.o: mkdir_build src/main.c
-	gcc -std=c99 -Wall -Werror -c src/main.c -o build/main.o
+	gcc -std=c99 -Wall -Werror -lncurses -lpthread -c src/main.c -o build/main.o
 
 dll_test.o: double_linked_list.o test/test_dll.c
 	gcc -std=c99 -Wall -Werror -I thirdparty -I src \
