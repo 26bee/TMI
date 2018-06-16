@@ -1,9 +1,11 @@
 all: mkdir_build mkdir_bin bin/TMI
 
-CFLAGS  = -Wall -Werror -std=c99 -lncurses -lcurses -lpthread
+CFLAGS  = -Wall -Werror -std=c99 -lncurses
 bin/TMI: build/double_linked_list.o \
 	build/instruction_list.o build/parser.o build/mt.o build/tmi.o build/main.o
-	gcc $(CFLAGS) build/main.o build/tmi.o build/double_linked_list.o build/instruction_list.o build/parser.o build/mt.o -o bin/TMI
+	gcc $(CFLAGS) build/main.o build/tmi.o build/double_linked_list.o \
+	build/instruction_list.o \
+	build/parser.o build/mt.o -o bin/TMI -lcurses -lpthread
 
 test: mkdir_build mkdir_bin TMI_TEST
 	bin/TMI_TEST
