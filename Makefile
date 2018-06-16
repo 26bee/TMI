@@ -10,9 +10,9 @@ bin/TMI: build/double_linked_list.o \
 test: mkdir_build mkdir_bin TMI_TEST
 	bin/TMI_TEST
 
-TMI_TEST: dll_test.o test_instruction.o test_parser.o main_test.o \
-	instruction_list.o double_linked_list.o parser.o \
-	mt.o tmi.o test_mt.o tmi.o test_tmi.o
+TMI_TEST: build/test/dll_test.o build/test/test_instruction.o build/test/test_parser.o build/test/main_test.o \
+	build/instruction_list.o build/double_linked_list.o build/parser.o \
+	build/mt.o build/tmi.o build/test/test_mt.o build/tmi.o build/test/test_tmi.o
 	gcc -std=c99 -Wall -Werror build/double_linked_list.o \
 	build/instruction_list.o \
 	build/parser.o \
@@ -45,27 +45,27 @@ build/tmi.o: src/tmi.c
 build/main.o: src/main.c
 	gcc $(CFLAGS) -c src/main.c -o build/main.o
 
-dll_test.o: double_linked_list.o test/test_dll.c
+build/test/dll_test.o: test/test_dll.c
 	gcc -std=c99 -Wall -Werror -I thirdparty -I src \
 	-c test/test_dll.c -o build/test/dll_test.o
 
-test_instruction.o: test/test_instruction.c
+build/test/test_instruction.o: test/test_instruction.c
 	gcc -std=c99 -Wall -Werror -I thirdparty -I src \
 	-c test/test_instruction.c -o build/test/test_instruction.o
 
-test_parser.o: test/test_parser.c
+build/test/test_parser.o: test/test_parser.c
 	gcc -std=c99 -Wall -Werror -I thirdparty -I src \
 	-c test/test_parser.c -o build/test/test_parser.o
 
-test_mt.o: test/test_mt.c
+build/test/test_mt.o: test/test_mt.c
 	gcc -std=c99 -Wall -Werror -I thirdparty -I src \
 	-c test/test_mt.c -o build/test/test_mt.o
 
-test_tmi.o: test/test_tmi.c
+build/test/test_tmi.o: test/test_tmi.c
 	gcc -std=c99 -Wall -Werror -I thirdparty -I src \
 	-c test/test_tmi.c -o build/test/test_tmi.o
 
-main_test.o: test/main.c
+build/test/main_test.o: test/main.c
 	gcc -std=c99 -Wall -Werror -I thirdparty -I src \
 	-c test/main.c -o build/test/main.o
 
